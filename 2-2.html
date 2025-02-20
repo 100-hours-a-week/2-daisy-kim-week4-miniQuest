@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const nums = [1, 2, 3, 4, 5];
+      multiply2 = function (nums) {
+        const transferred = nums.map((curr) => {
+          curr *= 2;
+          return curr;
+        });
+        return transferred;
+      };
+      console.log(multiply2(nums));
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        [1, 2, 3, 4, 5] 배열의 각 요소에 2를 곱한 새 배열을 만드는 함수를
+        작성하세요.
+      </b>
+      <ul>
+        <li>map 메소드를 사용하고, 결과 배열을 출력하세요!</li>
+      </ul>
+    </div>
+  </body>
+</html>
