@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const message = 'Hello, JavaScript!';
+
+      const showMessage = () => {
+        console.log(message); // A
+        let message = 'Hello, ES6!';
+        console.log(message); // B
+      };
+
+      showMessage();
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        다음 코드를 실행했을 때, 콘솔에 출력되는 결과를 예측하고 설명하세요.
+      </b>
+      <ol>
+        <li>
+          A
+          <ul>
+            <li>
+              <b>[결과]</b><br />
+              Uncaught ReferenceError: Cannot access 'message' before
+              initialization <br />at showMessage (8-1.html:8:21) <br />at
+              8-1.html:13:7<br />
+              showMessage @ 8-1.html:8 (anonymous) @ 8-1.html:13Understand this
+              errorAI
+            </li>
+            <li>
+              <b>[설명]</b><br />
+              사실 Hello, JavaScript!가 출력될 줄 알았다. 어차피 최상단에
+              초기화된 변수가 있어서 호이스팅 문제가 발생하지 않을 것이라고
+              생각했다. <br />
+              하지만 함수 내에서 호이스팅 문제가 발생하고 스코프 체인은 그
+              이후에 처리하는지<br />
+              let message;만 함수 내에서 호이스팅 되고 A에서는 접근할 수 없는
+              message에 접근해 ReferenceError가 출력되었다.<br />
+            </li>
+            <li>
+              스코프 체인이 수행되지 않는 이유는 클로저를 생성하는 경우,<br />
+              스코프 체인이 필요한 경우에만 힙에 저장이 되는데<br />
+              message를 함수 내에서 선언하지 않았기 때문에 별도의 클로저를
+              생성하지 않았고 <br />때문에 스코프 체인도 수행되지 않아
+              호이스팅으로 인한 문제가 발생하였다.
+            </li>
+          </ul>
+        </li>
+        <br />
+        <br />
+        <li>
+          B
+          <ul>
+            <li>
+              <b>[결과]</b><br />
+              Hello, ES6!
+            </li>
+            <li>
+              <b>[설명]</b><br />
+              A를 주석처리한 후 확인하니 호이스팅 문제는 발생하지 않았으며<br />
+              상위 스코프를 확인할 필요 없이 message에 Hello, ES6!가
+              할당되어있어<br />
+              스코프 체인을 실행하지 않고 Hello, ES6!가 출력되었다.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

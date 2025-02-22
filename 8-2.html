@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const color = 'blue';
+
+      const firstLevel = () => {
+        let color = 'red';
+
+        const secondLevel = () => {
+          let color = 'green';
+          console.log(color); // (1) green
+        };
+
+        secondLevel(); //green
+        console.log(color); // (2) red
+      };
+
+      firstLevel(); //red
+      console.log(color); // (3)blue
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        다음 코드를 실행했을 때, 각각의 console.log에서 출력되는 결과를
+        예측하고, 왜 그런 결과가 나왔는지 설명하세요.
+      </b>
+
+      <ul>
+        <b>[결과]</b
+        ><br />
+        green<br />red<br />blue
+      </ul>
+      <ol>
+        <li>
+          1. secondLevel();
+          <ul>
+            <li>
+              <b>[설명]</b><br />
+              우선 1, 2, 3번에 대해 전부 스코프 체인은 일어나지 않는다.<br />
+              const는 자신의 블록 범위에서 스코프를 가지는데 secondLevel() 함수
+              내에 color가 정의돼있기 때문에<br />
+              스코프 체인은 발생하지 않고 해당 블록에 초기화된 green에 접근하여
+              출력한다.
+            </li>
+          </ul>
+        </li>
+        <br />
+        <br />
+        <li>
+          2. firstLevel();
+          <ul>
+            <li>
+              <b>[설명]</b><br />
+              마찬가지로 firstLevel() 내에서 color에 red를 할당하였기 때문에
+              상위 스코프로의 스코프 체인은 발생하지 않는다.<br />
+              또한 스코프 체인은 하위 스코프로는 찾아가지 않기 때문에 red를
+              출력한다.
+            </li>
+          </ul>
+        </li>
+        <br /><br />
+        <li>
+          3. console.log(color);
+          <ul>
+            <li>
+              <b>[설명]</b><br />
+              firstLevel()로 실행 후, 가장 마지막 줄의 cosole.log(color);에서는
+              현재 자신의 스코프에 저장된 blue에 접근하여 출력한다.
+            </li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
