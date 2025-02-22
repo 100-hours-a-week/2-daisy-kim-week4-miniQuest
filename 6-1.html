@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const status = 200; //임의로 응답코드 정의
+      const myFirstPromise = new Promise((resolve, reject) => {
+        if (status >= 200 && status < 300) {
+          return resolve('Hello, Promise!');
+        } else {
+          return reject('promise failed.');
+        }
+      });
+
+      myFirstPromise.then((message) => {
+        console.log(message);
+      });
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        위 코드는 간단한 Promise를 사용하여 "Hello, Promise!"라는 메시지를
+        출력하는 코드입니다. 주어진 코드를 완성하여, 성공 메시지를 콘솔에 출력해
+        보세요.
+      </b>
+    </div>
+  </body>
+</html>
