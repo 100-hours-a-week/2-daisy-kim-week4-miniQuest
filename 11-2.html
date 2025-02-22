@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module">
+      import { Rectangle } from './11-1_rectangle.js';
+
+      class Square extends Rectangle {
+        isSquare = () => {
+          if (this.height == this.width) {
+            return true;
+          } else {
+            return false;
+          }
+        };
+      }
+      const square = new Square(4, 4);
+      console.log('넓이 : ', square.area());
+      console.log('둘레 : ', square.perimeter());
+      console.log(square.isSquare());
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        직사각형 클래스를 확장해 정사각형 클래스 만들기<br />
+        다음을 만족하는 정사각형 클래스를 만들어 주세요
+      </b>
+      <ol>
+        <li>클래스명은 Square 를 사용합니다.</li>
+        <li>Square 은 Rectangle 클래스를 확장합니다.</li>
+        <li>
+          Square 는 추가 메서드로 isSquare 메서드를 제공합니다. 기능은 다음과
+          같습니다.
+          <ol>
+            <li>현재 객체가 가로, 세로가 동일한지 확인합니다.</li>
+            <li>동일하면 true, 동일하지 않으면 false를 리턴합니다.</li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

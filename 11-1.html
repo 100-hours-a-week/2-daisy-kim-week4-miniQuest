@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module">
+      import { Rectangle } from './11-1_rectangle.js';
+      const square = new Rectangle(3, 4);
+      console.log('넓이 : ', square.area());
+      console.log('둘레 : ', square.perimeter());
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        직사각형 클래스 만들기<br />
+        다음을 만족하는 직사각형 클래스를 만들어 주세요.
+      </b>
+      <ol>
+        <li>클래스 명은 Rectangle 을 사용합니다.</li>
+        <li>
+          Rectangle 클래스는 두개의 변수를 가지며, 초기값을 전달 받습니다. -
+          width, height
+        </li>
+        <li>
+          클래스는 2개의 메서드를 가지고 있습니다.
+          <ol>
+            <li>area : 직사각형의 면적을 반환합니다. (공식 : 넓이 x 높이)</li>
+            <li>
+              perimeter : 직사각형의 둘레를 반환 합니다 (공식 : 2 * (넓이 +
+              높이))
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
