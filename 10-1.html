@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function createCouter() {
+        let count = 0; //지역변수
+        return {
+          increment: () => (count = count + 1), //콤마로 구분 -> 객체로 반환
+          decrement: () => count--, //증감 연산자로는 그냥 되는데 +1로 하면 count에 저장해서 ()로 감싸야 함
+          getCount: () => {
+            return count;
+          },
+        };
+      }
+      const counter = createCouter(); //객체로 반환
+      counter.increment();
+      counter.increment();
+      counter.decrement();
+      console.log(counter.getCount());
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        카운터 함수 만들어 보기<br />
+        다음 조건을 만족하는 클로저 함수를 만들어 보세요.
+      </b>
+      <ol>
+        <li>함수 명은 createCouter 로 사용해야 합니다.</li>
+        <li>
+          함수 내 총 3개의 메서드를 생성합니다.
+          <ol>
+            <li>increment : 1씩 숫자를 증가 시킵니다.</li>
+            <li>decrement : 1씩 숫자를 감소 시킵니다.</li>
+            <li>getCount : 현재 숫자를 반환 합니다.</li>
+          </ol>
+        </li>
+        <li>createCount 지역 변수로 count 를 사용합니다.</li>
+        <li>카운터 함수는 총 3개의 메서드를 가진 객체로 반환 됩니다.</li>
+      </ol>
+    </div>
+  </body>
+</html>
