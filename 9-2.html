@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const check = true;
+      if (check) {
+        let isRaining = true;
+        return isRaining;
+      }
+      console.log(isRaining);
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b> 블록 스코프 내의 let 변수 접근 </b>
+      <ol>
+        <li>
+          if 문 내부에 let으로 선언된 변수 isRaining을 true로 초기화하고, if 문
+          외부에서 이 변수에 접근하려 할 때 발생하는 문제를 설명하세요.
+        </li>
+        <li>이러한 스코프의 한계를 어떻게 해결할 수 있는지 제시하세요.</li>
+      </ol>
+      <ul>
+        <li>
+          <b>[결과]</b><br />
+          Uncaught SyntaxError: Illegal return statement (at 9-2.html:8:9)
+          <br />Understand this errorAI
+        </li>
+        <li>
+          <b>[설명]</b><br />
+          var과 달리 let은 블록 스코프를 가지기 때문에 if문 밖, 블록 밖에서
+          접근할 경우 ReferenceError가 반환된다.<br />
+        </li>
+        <li>
+          var를 사용하여 함수 스코프로 영역을 바꾸는 방법이 있다.<br />
+          외부에서 사용할 수 있지만 블록 밖에서 무자비로 변경이 가능하고 같은
+          식별자가 있다면 충돌할 수 있다는 안전성이 떨어지는 문제가 있다.<br />
+        </li>
+        <li>
+          또는 if문을 모듈, 함수로 감싸고 return문을 사용하여 함수 호출을 통해
+          반환받아 사용할 수 있다.
+        </li>
+        <li>
+          아니면 선언은 밖에서 let으로 하고 블록에서 처리한 후 밖에서 그대로
+          사용하는 방법이 있다.<br />하지만 순수함수가 깨질 수 있다는 점을
+          고려해야 한다.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
