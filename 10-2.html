@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      function messageMaker() {
+        const startMessage = prompt('startMessage 입력 : ');
+        return (makeMessage = (str) => startMessage + str);
+      }
+      const process = messageMaker();
+      console.log(process(' 환영합니다.'));
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        고정 값을 가지는 메시지 생성기 만들기<br />
+        다음 조건을 만족하는 클로저 함수를 만들어 보세요
+      </b>
+      <ol>
+        <li>함수 명은 messageMaker 로 사용합니다.</li>
+        <li>
+          messageMaker 함수는 메시지 시작 부분을 지정하는 문자열을 받습니다.
+        </li>
+        <li>
+          messageMaker 함수는 makeMessage 함수를 리턴 하는데, 해당 함수는 추가
+          문자열을 인자로 받습니다.
+        </li>
+        <li>
+          makeMessage 함수는 리턴 값으로 messageMaker 에서 받은 문자열과
+          makeMessage 에서 받은 문자열을 합쳐 완전한 문자열을 리턴 합니다.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
