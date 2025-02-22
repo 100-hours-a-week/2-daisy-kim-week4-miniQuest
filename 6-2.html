@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      async function waitForMessage() {
+        await setTimeout(() => {
+          console.log('Hello, Async/Await');
+        }, 1000);
+      }
+      waitForMessage();
+    </script>
+  </head>
+  <body>
+    <h1><a href="main.html">미니퀘스트 구현 목록 보기</a></h1>
+    <h3>문제 내용</h3>
+    <div>
+      <b>
+        setTimeout을 사용하여 1초 후에 "Hello, Async/Await!" 메시지를 반환하는
+        async 함수 waitForMessage를 만들어보세요. 그리고 이 함수를 사용하여
+        메시지를 콘솔에 출력해 보세요.
+      </b>
+    </div>
+  </body>
+</html>
